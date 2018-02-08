@@ -43,8 +43,7 @@ class Cinema(models.Model):
 
 
 class Movies (models.Model):  
-        cinema_name = models.ManyToManyField(Cinema)
-        movie_name_id = models.ForeignKey(Cinema, on_delete=models.CASCADE, blank = True, null=True)
+        #cinema_name = models.ManyToManyField(Cinema)
         name = models.CharField(max_length=200)
 
         def __str__ (self):
