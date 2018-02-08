@@ -1,0 +1,37 @@
+{% extends 'cinema/base.html' %}  
+{% block content %}
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-3 text-center">
+        <form action="/movies/" method="post">{% csrf_token %}
+        
+            <!-- cinema -->
+            <div class="fieldWrapper">
+                
+                <label for="id_category">Select a Cinema:</label>
+                {{ form.movie }}
+            </div>
+            
+            <!-- movie -->
+            <div class="fieldWrapper">
+                {{ form.location.errors }}
+                <label for="id_name">Select a Movie: </label>
+                {{ form.cinema }}
+            </div>
+
+            <!-- date -->
+            <div class="fieldWrapper">
+                {{ form.location.errors }}
+                <label for="id_name">Select Day: </label>
+                {{ form.cinema }}
+            </div>
+
+            <!-- time -->
+            <div class="fieldWrapper">
+                {{ form.location.errors }}
+                <label for="id_name">Select Time: </label>
+                {{ form.cinema }}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+{% endblock %}

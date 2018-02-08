@@ -1,0 +1,36 @@
+{% extends 'cinema/base.html' %}  
+{% comment %}
+
+This is the display for the 'Post Ad' form.
+
+URL: postad/  
+Model: Movies  
+ModelForm: Movies 
+View: MoviesPage [FormView]  
+View Return: HttpResponse : message - "Sweeeeeeeet."
+
+* = preset when user is logged in.
+
+{% endcomment %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-3 text-center">
+        <form action="/postad/" method="post">{% csrf_token %}
+        
+            <!-- category -->
+            <div class="fieldWrapper">
+                {{ form.category.errors }}
+                <label for="id_category">Select a Cinema:</label>
+                {{ form.category }}
+            </div>
+            <!-- location -->
+            <div class="fieldWrapper">
+                {{ form.location.errors }}
+                <label for="id_name">Select a Movie: </label>
+                {{ form.location }}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+{% endblock %}
